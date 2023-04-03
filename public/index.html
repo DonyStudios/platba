@@ -1,0 +1,73 @@
+<!doctype html>
+    <html lang="cs">
+
+    <head>
+        <title>Platba</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+
+    <body>
+        <header class="bg-primary text-center p-5">
+            <h1 class="display-3 text-white">Platba</h1>
+            <p class="h3 text-warning">50 kč</p>
+        </header>
+        <main class="container">
+            <h2 class="bg-info text-light text-center p-3 mt-3">Formulář pro zadání platebních údajů
+                úkolu</h2>
+            <div class="container">
+                <form action="/savedata" method="post" action="process-payment.php" method="post">
+                    <div class="form-group row">
+                        <label for="jmeno" class="col-sm-2 col-form-label">Jméno majitele</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="jmeno" id="jmeno"
+                                placeholder="Vaše jméno">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="cislo" class="col-sm-2 col-form-label">Číslo karty</label>
+                        <div class="col-sm-10">
+                            <input class="form-control" min="0" max="9999999999999999" pattern="\d{16}" name="cislo" id="cislo"
+                                placeholder="1234-5678-9123-4567">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="kod" class="col-sm-2 col-form-label">CVV kod</label>
+                        <div class="col-sm-10">
+                            <input pattern="\d{3}" class="form-control" name="kod" id="kod"
+                                placeholder="kod">
+                        </div>
+                    </div>
+            </div>
+            <div class="form-group row">
+                <label for="datum" class="col-sm-2 col-form-label">
+                    Datum expirace</label>
+                <div class="col-sm-5">
+                    <input type="date" class="form-control" name="datum" id="datum">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="offset-sm-2 col-sm-10">
+                    <button type="submit" class="btn btn-primary">Odeslat údaje</button>
+                </div>
+            </div>
+            </form>
+            </div>
+        </main>
+        <footer class="bg-light text-center p-3">
+            <p><img src="./qr.jpg" alt="qr"></p>
+            <p>&copy; 2022 - Daniel Hendrych, IT2, Opava</p>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-
+q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
+    </body>
+
+    </html>
